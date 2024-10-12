@@ -1,10 +1,10 @@
+import { TidyURL } from 'tidy-url'
 import {
   generateErrorJSONResponse,
   generateJSONResponse,
 } from './json-response'
 import { linkType } from './link-type'
 import Scraper from './scraper'
-import { TidyURL } from 'tidy-url'
 import { scraperRules } from './scraper-rules'
 
 addEventListener('fetch', (event: FetchEvent) => {
@@ -71,6 +71,9 @@ async function handleRequest(request: Request) {
 
     // Add unshortened url
     response.url = unshortenedUrl
+
+    // Keep the original url
+    response.requested_url = url
 
     // Add url type
     response.urlType = linkType(url, false)
