@@ -137,6 +137,10 @@ export const scraperRules: GetMetadataOptions[] = [
         selector: 'link[rel="icon"]',
         attribute: 'href',
       },
+      {
+        selector: 'link[rel="shortcut icon"]',
+        attribute: 'href',
+      },
     ],
   },
   {
