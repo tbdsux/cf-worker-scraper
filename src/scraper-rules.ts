@@ -130,6 +130,16 @@ export const scraperRules: GetMetadataOptions[] = [
     ],
   },
   {
+    name: 'favicon',
+    multiple: false,
+    selectors: [
+      {
+        selector: 'link[rel="icon"]',
+        attribute: 'href',
+      },
+    ],
+  },
+  {
     name: 'video',
     multiple: false,
     selectors: [
